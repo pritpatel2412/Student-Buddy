@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Buddy AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="sidepanel.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="brand-section">
+                    <div class="logo-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="title-column">
+                        <h1 class="app-title">Student Buddy</h1>
+                        <div class="connection-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Connected</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <!-- Pro Badge calculated visually -->
+                    <div class="pro-badge">PRO</div>
+                </div>
+            </div>
+
+            <!-- Problem Context Bar -->
+            <div class="context-bar">
+                <div class="context-info" id="context-info">
+                    <svg class="context-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    <span id="problem-title" class="truncate">Detecting problem...</span>
+                </div>
+                <button id="refresh-context" class="icon-button" title="Refresh Context">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 4v6h-6" />
+                        <path d="M1 20v-6h6" />
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Quick Actions Grid -->
+            <div class="action-grid">
+                <button class="action-chip" data-action="hint">
+                    <span class="chip-icon">💡</span>
+                    <span>Hint</span>
+                </button>
+                <button class="action-chip" data-action="debug">
+                    <span class="chip-icon">🐛</span>
+                    <span>Debug</span>
+                </button>
+                <button class="action-chip" data-action="complexity">
+                    <span class="chip-icon">⚡</span>
+                    <span>Big-O</span>
+                </button>
+                <button class="action-chip" data-action="similar">
+                    <span class="chip-icon">🎯</span>
+                    <span>Similar</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Scrollable Chat Area -->
+        <main class="chat-viewport" id="chat-container">
+            <div class="welcome-state">
+                <div class="welcome-icon">🎓</div>
+                <h3>Ready to code?</h3>
+                <p>Open a problem on LeetCode or GeeksForGeeks and request a hint to get started.</p>
+            </div>
+        </main>
+
+        <!-- Input Footer -->
+        <footer class="input-footer">
+            <div class="input-wrapper">
+                <textarea id="user-input" placeholder="Ask a question or paste code..." rows="1"></textarea>
+                <button id="send-btn" class="send-button" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="secrets.js"></script>
+    <script src="constants.js"></script>
+    <script src="sidepanel.js"></script>
+</body>
+
+</html>

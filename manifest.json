@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Student Buddy - AI DSA Mentor",
+  "version": "1.0",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "description": "An AI mentor that helps you solve DSA problems with progressive hints.",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://*.leetcode.com/*",
+    "https://www.geeksforgeeks.org/*",
+    "https://*.codeforces.com/*",
+    "https://www.hackerrank.com/*",
+    "https://www.naukri.com/code360/*"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://www.geeksforgeeks.org/*",
+        "https://codeforces.com/*",
+        "https://www.hackerrank.com/*",
+        "https://www.naukri.com/code360/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "Open Student Buddy",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
